@@ -1,0 +1,14 @@
+@mixin flex($alignment-flex :center) {
+    display: flex;
+    justify-content: $alignment-flex;
+}
+
+@mixin grid($grid-sections: 1fr, $alignment-grid: center) {
+    display: grid;
+    grid-template-columns: $grid-sections;
+    align-items: $alignment-grid;
+}
+
+@mixin color($b-or-w: $color2) {
+    color: $b-or-w;
+}

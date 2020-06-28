@@ -1,0 +1,24 @@
+/* Helper styles */
+.spacer100 {
+    height: 100px;
+    width: 100%;
+}
+
+.spacer50 {
+    height: 50px;
+    width: 100%;
+}
+
+.spacer10 {
+    height: 10px;
+    width: 100%;
+}
+
+.anchor-link h1:before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0c1   ";
+    font-weight: 900;
+}
+
+
+

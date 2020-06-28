@@ -1,0 +1,75 @@
+/* styles for the footer */
+.footer-wrapper  {
+    height: 300px;
+    background-color: #11122b;
+    color: #cbcbcb;
+    font-family: "Ubuntu Condensed", "sans-serif";
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    margin-top: -5px;
+}
+
+/* logo styles */
+.footer-wrapper > .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.footer-wrapper > .logo img {
+    width: 180px;
+    height: 100%;
+    filter: brightness(200%);
+    /* margin-right: 15px; */
+}
+
+/* inforamtion styles */
+.footer-wrapper > .info-wrapper span {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1em;
+    letter-spacing: 2px;
+}
+.footer-wrapper > .info-wrapper > .number {
+    transition: 0.5s;
+}
+.footer-wrapper > .info-wrapper > .number:hover {
+    color: #cea135;
+}
+
+.footer-wrapper > .info-wrapper > .store-hours {
+    font-size: .8em;
+    color: #cea135;
+    text-align: center;
+    
+}
+/* styles override for links */
+.footer-wrapper > .links-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 400px;
+}
+
+/* social media styles */
+.footer-wrapper > .social-media-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.footer-wrapper > .social-media-wrapper a {
+    font-size: 1.5em;
+    color: #cbcbcb;
+}
+
+/* copyright claims styles */
+.footer-wrapper > .liscensing {
+    font-size: .7em;
+    font-weight: 200;
+}
+.footer-wrapper > .liscensing {
+    margin-right: 2px;
+}

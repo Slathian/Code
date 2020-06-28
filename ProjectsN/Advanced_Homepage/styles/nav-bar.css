@@ -1,0 +1,14 @@
+.navbar-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    height: 75px;
+    background-color: black;
+    width: 56vw;
+    border-radius: 100px;
+    margin-top: 50px;
+    display: flex;
+}
+

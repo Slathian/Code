@@ -1,0 +1,174 @@
+.navBarWrapper > .navBar {
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -10px;
+    
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+/* NAV BAR LOGO */
+.leftColumn {
+    width: 20%;
+}
+    
+
+
+.navBarImg img {
+    width: 214px;
+    height: 102px;
+}
+
+
+
+/* MIDDLE COLUMN */
+.centerColumn {
+    margin-right: 120px;
+    width: 50%;
+    margin-left: 30px;
+}
+
+.bottomPart > .links {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    width: 25%;
+}
+
+.links a {
+    background: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .1s;
+    text-align: center;
+}
+
+.links button {
+    background: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .1s;
+    text-align: center;
+}
+
+.fifth button {
+    color: grey;
+    width: 100px;
+}
+
+.links button:hover {
+    color: gold;
+}
+
+.links a:hover {
+    color: gold;
+}
+
+
+
+.bottomPart {
+    display: flex;
+    justify-content: left;    
+}
+
+
+
+.topPart > .links {
+    display: flex;
+    justify-content: left;
+    color: gold;
+    padding-bottom: 5px;
+    font-size: 1.25em;
+    padding-left: 30px;
+}
+
+/* .centerColumn > .bottomPart :nth-child(1) {
+    color: blue;
+} */
+
+.bottomPart > .fifth {
+    padding-left: 65px;
+    color: grey;
+}
+
+/* RIGHT COLUMN */
+.rightColumn {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+    font-size: 1.25rem;
+    color: whitesmoke;
+}
+
+.localB {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+}
+
+.dropdown i {
+    color: rgba(97, 226, 97, 0.877);
+}
+
+
+.buttonNAV button {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: 800rem;
+    font-size: 1.10rem;
+    padding: 1em 1.15em;
+    background: rgb(74, 74, 75);
+    color: rgb(238, 236, 234);
+    border: 1px solid rgb(74, 74, 75);
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+}
+.buttonNAV button:hover {
+    transition: .1s;
+    color: gold;
+}
+
+.buttonNAV button:active {
+    transition: .1s;
+    background: gold;
+    color: black;
+}    
+
+.iconButton button{
+    background: none;
+    color: grey;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding-top: 10px;
+    outline: none;
+    transition: .3s;
+}
+
+.iconButton button:hover {
+    color: gold;
+}
+ .iconButton button:active {
+    transition: .1s;
+    font-size: 0em;
+    padding-top: 15px;
+}
+
+

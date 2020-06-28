@@ -1,0 +1,157 @@
+.navBar-wrapper {
+    display: flex;
+    justify-content: start;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background: #040403;
+}
+
+/* Left side of nav bar */
+.leftC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    
+}
+
+.leftC img {
+    margin-left: 10px;
+    width: 100%;
+    height: 90px;
+}
+
+@media (max-width: 1500px) {
+    .leftC img {
+        height: 60px;
+    }
+}
+
+.linkedin-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100px;  
+}
+
+.linkedin-icon a {
+    text-decoration: none;
+    color: #EEE5E5;
+    font-size: 3rem;
+    transition: .2s;
+}
+
+.linkedin-icon a:hover {
+    color: rgb(40,103,178);
+}
+
+
+/* Right side of nav bar */
+.rightC {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin-right: 25px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.link a {
+    text-decoration: none;
+    color: #EEE5E5;
+    transition: .2s;
+    
+}
+
+.link a:hover {
+    color: #2cd4eb;
+    letter-spacing: 1px;
+}
+
+.topSpacer {
+    position: fixed;
+    z-index: 2;
+    background: #040403;
+}
+
+.middleSpacer {
+    background: #565264;  
+}
+
+.bottomSpacer {
+    background: #2cd4eb;
+}
+
+/* INVIS SPACER TO FIX MEDIA ISSUE */
+.invis-space {
+    display: none;
+    position: absolute;
+}
+
+
+/* @media */
+
+@media (max-width: 800px) {
+    
+    .invis-space {
+        position: relative;
+        display: block;
+    }
+    .navBar {
+        height: 400px;
+        margin-top: -500px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rightC {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .link {
+        width:20%;
+    }
+
+    .link a:hover {
+        letter-spacing: .5px;
+    }
+
+    .leftC {
+        width: 100%;
+    }
+
+    .leftC img {
+        margin-top: 10px;
+        width: 95%;
+        height: 200px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

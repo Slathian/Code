@@ -1,0 +1,22 @@
+<div class='car-maserati'></div>
+<div class='car-tesla'></div>
+<div class='car-porsche'></div>
+
+
+
+
+
+
+
+$cars: 'maserati', 'tesla', 'porsche';
+
+@each $car-name in $cars {
+  .car-#{$car-name} {
+    background-image: url('https://s3.amazonaws.com/bottega-devcamp/scss/cars/#{$car-name}.jpg');
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 500px;
+    object-fit: fill;
+    float: left;
+  }
+}

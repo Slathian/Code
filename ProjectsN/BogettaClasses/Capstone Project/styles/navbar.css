@@ -1,0 +1,98 @@
+
+/* BASE STYLES */
+html{
+    font-family: 'oxygen', 'sans-serif';
+}
+
+body {
+    margin: 0px;
+}
+
+.navbar-wrapper {
+    background-color: #415086;
+}
+
+.navbar-wrapper div {
+    display: none;
+}
+
+.navbar-wrapper .toggle,
+.navbar-wrapper .brand {
+    display: inline-block;
+}
+
+.navbar-wrapper .link {
+    display: block;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    background: #223047;
+    color: white;
+}
+
+.navbar-wrapper .link:hover,
+.navbar-wrapper .link:active {
+    color: #223047;
+    background: white;
+}
+
+.navbar-wrapper > .brand {
+    width: 10em;
+    text-align: center;
+    padding: 1em;
+    color: white;
+}
+
+.navbar-wrapper a {
+    text-decoration: none;
+}
+
+.navbar-wrapper .toggle {
+    padding: 1em;
+    color: black;
+}
+
+/* MEDIA */
+
+@media (min-width: 48em) {
+    .navbar-wrapper {
+        display: flex;
+    }
+
+    .navbar-wrapper div {
+        display: flex;
+    }
+
+    .navbar-wrapper .left,
+    .navbar-wrapper .right {
+        display: flex;
+        flex: 1;
+    }
+
+    .navbar-wrapper .link {
+        width: auto;
+    }
+
+    .navbar-wrapper .right {
+        justify-content: flex-end;
+    }
+
+    .navbar-wrapper .toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 48em) {
+    .navbar-wrapper.active .toggle {
+        background: #223047;
+        color: white;
+    }
+
+    .navbar-wrapper .brand {
+        text-align: left;
+    }
+
+    .navbar-wrapper.active div {
+        display: block;
+    }
+}

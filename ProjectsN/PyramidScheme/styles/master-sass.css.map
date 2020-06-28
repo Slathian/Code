@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "master-sass.scss",
+        "variables.scss",
+        "global-mixins.scss"
+    ],
+    "names": [],
+    "file": "master-sass.css"
+}

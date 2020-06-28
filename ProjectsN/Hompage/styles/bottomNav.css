@@ -1,0 +1,52 @@
+.bottom-nav-body {
+    height: 150px;
+    background-color: black;
+    color: #EEE5E5;
+    display: flex;
+    justify-content: center;
+}
+
+.info-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 50%;
+}
+
+.claims-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: .5rem;
+    text-align: center;
+}
+
+.info-wrapper > .icon-links-wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.icon-link {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-link a {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    width: 100%;
+    text-decoration: none;
+    color: #EEE5E5;
+    transition: .3s;
+}
+
+.icon-link a:hover {
+    color: #2cd4eb;
+}
+

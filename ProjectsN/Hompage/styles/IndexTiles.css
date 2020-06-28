@@ -1,0 +1,87 @@
+/* Universal (Local) */
+.tile-wrapper {
+    font-family: 'Work Sans';
+}
+
+
+
+/* TOP TILE ONLY */
+.intro {
+    background-image: url(/images/nature.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: left; 
+    margin-top: 200px;   
+}
+
+/* TO FIX NAV PROBLEM ON MAIN PAGE ------------- */
+.navBar-wrapper {
+    margin-top: -200px;
+}
+
+@media (max-width: 800px) {
+    .navBar {
+        height: 400px;
+        margin-top: -300px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* ---------------------------------------------- */
+
+.intro-content {
+    margin: 100px;
+    background-color: rgba(2, 2, 2, 0.5);
+    color: #EEE5E5;
+    width: 35%;
+    
+}
+
+/* Top Message */
+.welcome-message {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.welcome-message h1 {
+    font-size: 5rem;
+    color: #EEE5E5;
+}
+
+/* Left Column */
+.message-board-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.message-board-wrapper > .welcome-para {
+    width: 100%;
+    margin-left: 20px;
+    font-size: 2rem;
+    line-height: 150%;
+}
+
+.message-board-wrapper > .welcome-para span {
+    font-weight: 700;
+}
+
+
+/* Right Column */
+.anchor-links-wrapper{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    width: 40%;
+}
+
+.bottom-anchor {
+    margin-top: -10px;
+}
