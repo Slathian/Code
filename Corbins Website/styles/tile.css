@@ -1,0 +1,42 @@
+.tile-outline   {
+    margin: 50px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px black solid;
+    box-shadow:  0px 0px 40px 10px;
+}
+
+.tile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px grey solid; */
+    flex-direction: column;
+    height: 65vh;
+}
+
+.metadata {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+.title h1{
+    font-size: 3.5em;
+    font-size: 2vw;
+    color: black;
+    text-align: center;
+}
+
+.info h2 {
+    color: rgba(64, 67, 78, 1);
+    line-height: 2em;
+    text-align: start;
+    font-size: 1.2em;
+    font-size: 1.2vw;
+}

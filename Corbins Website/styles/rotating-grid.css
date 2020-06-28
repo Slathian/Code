@@ -1,0 +1,35 @@
+.squares-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.squares {
+    width: 1000px;
+}
+
+.square {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -4px;
+}
+
+.square img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.square-text {
+    padding: 25px;
+    font-size: 30px;
+}
+
+.square span {
+    color: goldenrod;
+    font-weight: 700;
+}
+
+.last {
+    margin-bottom: 100px;
+}
