@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Basic Error</title>
+  </head>
+  <body>
+
+  </body>
+
+  <script>
+    // ############################################################################################## Example 1
+    // function siteComponent(func) {
+    // return func();
+    // }
+
+    // widget = () => {
+    //     return '<div>Hi there!</div>';
+    // }
+
+    // try {
+    //     console.log(siteComponent(widget));
+    // } catch(e) {
+    //     console.log ('An error occured with the site component |', e);
+    // }
+    // ############################################################################################## Example 2
+    class DevcampError extends Error {
+      constructor(msg = 'An error occured', ...perams) {
+        super(...perams);
+
+        this.msg = msg;
+      }
+    }
+
+
+    function siteComponent(func) {
+      return func();
+    }
+
+    widget = () => {
+      return '<div>Hi there</div>';
+    }
+
+    try {
+      console.log(siteComponent('widget'));
+    } catch(e) {
+      throw new DevcampError('Wack custom message that should be showing',`~~~~Secondary error message: ${e}`);
+    }
+
+    // For some reason my first peram will not show at all. Contact support ticket see if I can get help with it. 
+
+  </script>
+</html>
