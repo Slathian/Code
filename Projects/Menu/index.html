@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <!-- font imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Montserrat&display=swap" rel="stylesheet">
+    <!--                                     -->
+
+    <!-- links below-->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/toolkit.css">
+    <!--                                     -->
+
+    <!-- menu lists -->
+    <script>
+        const Salmon = {
+            name: 'Salmon',
+            price: 25,
+            details: 'Your basic salmon but with a lemon zest to it',
+            additives: {
+                first: {
+                    name: 'Lemon Toppings',
+                    addedPrice: 4 
+                },
+                second: {
+                    name: 'Salted Pan Fry',
+                    addedPrice: 5
+                },
+                third: {
+                    name: 'Complete Deboning',
+                    addedPrice: 10
+                }
+            },
+            subtractions: {
+                first: {
+                    name: 'Three Quarters of the fish',
+                    subtractedPrice: 5 
+                },
+                second: {
+                    name: 'raw',
+                    subtractedPrice: 5
+                },
+                third: {
+                    name: 'Stale',
+                    subtractedPrice: 10
+                }
+            }
+        }
+
+        const Steak = {
+            name: 'Steak',
+            price: 55,
+            details: 'A nice meaty steak with a side of potatos',
+            additives: {
+                first: {
+                    name: 'Cross Cut Fries',
+                    addedPrice: 3 
+                },
+                second: {
+                    name: 'Extra Done',
+                    addedPrice: 2
+                },
+                third: {
+                    name: 'six inches thick',
+                    addedPrice: 20
+                }
+            },
+            subtractions: {
+                first: {
+                    name: 'Aged',
+                    subtractedPrice: 5 
+                },
+                second: {
+                    name: 'Raw',
+                    subtractedPrice: 25
+                },
+                third: {
+                    name: 'No Sides',
+                    subtractedPrice: 5
+                }
+            }
+            
+        }
+        const Burger = {
+            name: 'Burger',
+            price: 30,
+            details: 'A juicy burger that melts in your mouth',
+            additives: {
+                first: {
+                    name: 'Cheese',
+                    addedPrice: 2 
+                },
+                second: {
+                    name: 'Vegan Burger Organic No GMO Fresh',
+                    addedPrice: 40
+                },
+                third: {
+                    name: 'Special Sauce',
+                    addedPrice: 4
+                }
+            },
+            subtractions: {
+                first: {
+                    name: 'Only Meat',
+                    subtractedPrice: 5 
+                },
+                second: {
+                    name: 'No Bread',
+                    subtractedPrice: 2
+                },
+                third: {
+                    name: 'Half Burger',
+                    subtractedPrice: 10
+                }
+            }
+        }
+    </script>
+
+    <!-- body style -->
+    <style>
+        body {
+            margin: 0px;
+        }
+    </style>
+
+    <!-- init totalValue -->
+    <script>
+        totalValue = 0
+    </script>
+</head>
+
+
+<!-- Main body Below -->
+<body>
+    <div class="intro">
+        <h1>Are you ready to place your order?</h1>
+    </div>
+
+    <div>
+        <div class='spacer-solid-10px-white'></div>
+        <div class='spacer-solid-10px-black'></div>
+        <div class='spacer-solid-5px-white'></div>
+        <div class='spacer-solid-5px-white'></div>
+        <div class='spacer-solid-10px-black'></div>
+        <div class='spacer-solid-5px-white'></div>
+        <div class='spacer-solid-5px-white'></div>
+        <div class='spacer-solid-10px-black'></div>
+        <div class='spacer-solid-5px-white'></div>
+    </div>
+
+    <div class='menu-wrapper'>
+        <div class="menu common">
+            <span id= 'greet'><h2>Here are the options we have available today</h2></span>
+            <div class="menu-spacer" id= 'menu-spacer-special'></div>
+            <div class="menu-parts-wrapper" id= 'options'>
+                <button class="price-content common menu-option" onclick="menuStart1()">
+                    <p id='price1'></p>
+                </button>
+                <div class="details-content common menu-option">
+                    <p id='description1'></p>
+                </div>
+                <button class="price-content common menu-option" onclick="menuStart2()">
+                    <p id='price2'></p>
+                </button>
+                <div class="details-content common menu-option">
+                    <p id='description2'></p>
+                </div>
+                <button class="price-content common menu-option" onclick="menuStart3()">
+                    <p id='price3'></p>
+                </button>
+                <div class="details-content common menu-option">
+                    <p id='description3'></p>
+                </div>
+            </div>
+            <div class="steak-selection second-phase" id= 'steak-option'>
+                <h2>Here are all of the options available with the steak</h2>
+                <div class="modification-wrapper">
+                    <div class="title common">
+                        <h3>Here are the available add-ons</h3>
+                    </div>
+                    <div class="title common">
+                        <h3>Here are the available reductions</h3>
+                    </div>
+                    <div class="additives-wrapper mod-wrapper">
+                        <button class="additive menu-option" id= 'steak-button1' onclick="selectedItem('steak-button1', 3)">
+                            <p id='steak-additive-price1'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'steak-button2' onclick="selectedItem('steak-button2', 2)">
+                            <p id= 'steak-additive-price2'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'steak-button3' onclick="selectedItem('steak-button3', 20)">
+                            <p id= 'steak-additive-price3'></p>
+                        </button>
+                    </div>
+                    <div class="subtractor-wrapper mod-wrapper">
+                        <button class="additive menu-option" id= 'steak-button4' onclick="selectedItem('steak-button4', -5)">
+                            <p id='steak-subtract-price1'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'steak-button5' onclick="selectedItem('steak-button5', -25)">
+                            <p id='steak-subtract-price2'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'steak-button6' onclick="selectedItem('steak-button6', -5)">
+                            <p id='steak-subtract-price3'></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="salmon-selection second-phase" id= 'salmon-option'>
+                <h2>Here are all of the options available with the salmon</h2>
+                <div class="modification-wrapper">
+                    <div class="title common">
+                        <h3>Here are the available add-ons</h3>
+                    </div>
+                    <div class="title common">
+                        <h3>Here are the available reductions</h3>
+                    </div>
+                    <div class="additives-wrapper mod-wrapper">
+                        <button class="additive menu-option" id= 'salmon-button1' onclick="selectedItem('salmon-button1', 4)">
+                            <p id='salmon-additive-price1'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'salmon-button2' onclick="selectedItem('salmon-button2', 5)">
+                            <p id= 'salmon-additive-price2'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'salmon-button3' onclick="selectedItem('salmon-button3', 10)">
+                            <p id= 'salmon-additive-price3'></p>
+                        </button>
+                    </div>
+                    <div class="subtractor-wrapper mod-wrapper">
+                        <button class="additive menu-option" id= 'salmon-button4' onclick="selectedItem('salmon-button4', -5)">
+                            <p id='salmon-subtract-price1'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'salmon-button5' onclick="selectedItem('salmon-button5', -5)">
+                            <p id='salmon-subtract-price2'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'salmon-button6' onclick="selectedItem('salmon-button6', -10)">
+                            <p id='salmon-subtract-price3'></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="burger-selection second-phase" id= 'burger-option'>
+                <h2>Here are all of the options available with the burger</h2>
+                <div class="modification-wrapper">
+                    <div class="title common">
+                        <h3>Here are the available add-ons</h3>
+                    </div>
+                    <div class="title common">
+                        <h3>Here are the available reductions</h3>
+                    </div>
+                    <div class="additives-wrapper mod-wrapper">
+                        <button class="additive menu-option" id= 'burger-button1' onclick="selectedItem('burger-button1', 2)">
+                            <p id='burger-additive-price1'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'burger-button2' onclick="selectedItem('burger-button2', 40)">
+                            <p id= 'burger-additive-price2'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'burger-button3' onclick="selectedItem('burger-button3', 4)">
+                            <p id= 'burger-additive-price3'></p>
+                        </button>
+                    </div>
+                    <div class="subtractor-wrapper mod-wrapper">
+                        <button class="additive menu-option" id= 'burger-button4' onclick="selectedItem('burger-button4', -5)">
+                            <p id='burger-subtract-price1'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'burger-button5' onclick="selectedItem('burger-button5', -2)">
+                            <p id='burger-subtract-price2'></p>
+                        </button>
+                        <button class="additive menu-option" id= 'burger-button6' onclick="selectedItem('burger-button6', -10)">
+                            <p id='burger-subtract-price3'></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stage-button-wrapper" id='menu-reset-button'>
+        <button id='first-stage' onclick="menuReset()">
+            Back to menu!
+        </button>
+    </div>
+
+    <div class="total-counter" id= 'total'>
+        <p id= 'total-value'></p>
+    </div>
+</body>
+<!-- script for all of the transition calls -->
+<script>
+    menuStart1 = () => {
+        var menu = document.getElementById("options");
+        menu.style.display = "none";
+        var init_button = document.getElementById("menu-reset-button");       
+        init_button.style.display = "flex";
+        var next_menu = document.getElementById("steak-option");
+        next_menu.style.display = "flex";
+        var greet = document.getElementById('greet');
+        greet.style.display = 'none';
+        var spacer = document.getElementById('menu-spacer-special');
+        spacer.style.display = 'none';
+        var title = document.getElementById('total');
+        title.style.marginTop = '155px';
+        totalValue = 55;
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+        
+    }
+    menuStart2 = () => {
+        var menu = document.getElementById("options");
+        menu.style.display = "none";
+        var init_button = document.getElementById("menu-reset-button");       
+        init_button.style.display = "flex";
+        var next_menu = document.getElementById("salmon-option");
+        next_menu.style.display = "flex";
+        var greet = document.getElementById('greet');
+        greet.style.display = 'none';
+        var spacer = document.getElementById('menu-spacer-special');
+        spacer.style.display = 'none';
+        var title = document.getElementById('total');
+        title.style.marginTop = '155px';
+        totalValue = 25;
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+    }
+    menuStart3 = () => {
+        var menu = document.getElementById("options");
+        menu.style.display = "none";
+        var init_button = document.getElementById("menu-reset-button");       
+        init_button.style.display = "flex";
+        var next_menu = document.getElementById("burger-option");
+        next_menu.style.display = "flex";
+        var greet = document.getElementById('greet');
+        greet.style.display = 'none';
+        var spacer = document.getElementById('menu-spacer-special');
+        spacer.style.display = 'none';
+        var title = document.getElementById('total');
+        title.style.marginTop = '155px';
+        totalValue = 30;
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+    }
+
+    menuReset = () => {
+        var menu = document.getElementById("options");
+        menu.style.display = "grid";
+        var init_button = document.getElementById("menu-reset-button");
+        init_button.style.display = "none";
+        var next_menu = document.getElementsByClassName("second-phase")[0];
+        next_menu.style.display = "none";
+        var next_menu = document.getElementsByClassName("second-phase")[1];
+        next_menu.style.display = "none";
+        var next_menu = document.getElementsByClassName("second-phase")[2];
+        next_menu.style.display = "none";
+        var greet = document.getElementById('greet');
+        greet.style.display = 'block';
+        var spacer = document.getElementById('menu-spacer-special');
+        spacer.style.display = 'block';
+        var title = document.getElementById('total');
+        title.style.marginTop = '200px';
+        for (i = 1; i < 7; i++) {
+            augment = document.getElementById(`steak-button${i}`);
+            augment.style.border = 'none';
+        }
+        for (i = 1; i < 7; i++) {
+            augment = document.getElementById(`salmon-button${i}`);
+            augment.style.border = 'none';
+        }
+        for (i = 1; i < 7; i++) {
+            augment = document.getElementById(`burger-button${i}`);
+            augment.style.border = 'none';
+        }
+        totalValue = 0
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+
+        
+    }
+</script>
+
+<!-- script for the total counter and animations -->
+<script>
+    document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+
+    selectedItem = (id, price) => {
+        item = document.getElementById(id);
+        item.style.transition = '0.04';
+        if (item.style.border == 'solid green') {
+            item.style.border = 'none';
+            totalValue = totalValue - price;
+            document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+        } else {
+            item.style.border = 'solid green';
+            totalValue = totalValue + price;
+            document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+        };
+
+    };
+</script>
+
+<script src="js/main.js"></script>
+
+<!-- script used while making the menu sections -->
+<!-- <script>
+    var greet = document.getElementById('greet')
+    greet.style.display = 'none'
+    var menu = document.getElementById("options");
+    menu.style.display = "none";
+</script> -->
+
+
+</html>

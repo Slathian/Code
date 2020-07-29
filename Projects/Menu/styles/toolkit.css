@@ -1,0 +1,55 @@
+.spacer-solid-5px-black {
+    display: flex;
+    height: 5px;
+    width: 100%;
+    background-color: black;
+}
+
+.spacer-solid-10px-black {
+    display: flex;
+    height: 10px;
+    width: 100%;
+    background-color: black;
+}
+
+.spacer-solid-25px-black {
+    display: flex;
+    height: 25px;
+    width: 100%;
+    background-color: black;
+}
+
+.spacer-solid-50px-black {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+}
+
+.spacer-solid-5px-white {
+    display: flex;
+    height: 5px;
+    width: 100%;
+    background-color: #298489;
+}
+
+.spacer-solid-10px-white {
+    display: flex;
+    height: 10px;
+    width: 100%;
+    background-color: #298489;
+}
+
+.spacer-solid-25px-white {
+    display: flex;
+    height: 25px;
+    width: 100%;
+    background-color: #298489;
+}
+
+.spacer-solid-50px-white {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: #298489;
+}
