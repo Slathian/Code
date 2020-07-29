@@ -6,6 +6,7 @@
     <title>Menu</title>
 
     <!-- font imports -->
+    <script src="https://kit.fontawesome.com/21b2d32871.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Montserrat&display=swap" rel="stylesheet">
     <!--                                     -->
 
@@ -152,6 +153,45 @@
         <div class='spacer-solid-5px-white'></div>
     </div>
 
+    <div class="confirm-popout-window-wrapper">
+        <div class="popout-window">
+            <div class="order-menu-wrapper" id= 'order-wrapper'>
+                <div class="exit-button-wrapper">
+                    <button class= 'exit-button' onclick="popoutWindowClose()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="popout-title-wrapper">
+                    <h1>Your Order is Concluded!</h1><br>
+                    <h2>Confirm order?</h2>
+                </div>
+                <div class="popout-details">
+                    <p id= 'popout-details-input'></p>
+                </div>
+                <div class="total-counter popout-common" id= 'total-copied'>
+                    <p id= 'total-value-copied'></p>
+                </div>
+                <div class="popout-button">
+                    <button class="popout-common" id= 'confirmation-button'  onclick="confirmationWindowStepTwo()">
+                        Confirm!
+                    </button>
+                </div>
+            </div>
+
+            <div class="congrats-page-wrapper" id= 'final-window'>
+                <div class="exit-button-wrapper">
+                    <button class= 'exit-button' onclick="popoutWindowClose()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="you-are-done">
+                    <h1>Your Order Has Been Placed!</h1>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
     <div class='menu-wrapper'>
         <div class="menu common">
             <span id= 'greet'><h2>Here are the options we have available today</h2></span>
@@ -288,7 +328,7 @@
         <p id= 'total-value'></p>
     </div>
     <div class="order-button-wrapper">
-        <button id= 'order-button'>
+        <button id= 'order-button' onclick = 'popoutWindow()'>
             Place Order!
         </button>
     </div>
@@ -386,9 +426,58 @@
         // console.log(`This should have something: ${endResultOrderList}`); 
         endResultOrderList = [];
         // console.log(`This should be empty: ${endResultOrderList}`);
-
-        
     }
+
+    popoutWindow = () => {
+        var popout = document.getElementsByClassName('confirm-popout-window-wrapper')[0];
+        popout.style.display = 'flex';
+        format = () => {
+            var sideDish = 'exist'
+            var configure = ''
+            const mainDish = endResultOrderList[0];
+            if (endResultOrderList.length >= 2) {
+                sideDish = endResultOrderList;
+                sideDish.splice(0,1);
+                // console.log(sideDish);
+                for (i in sideDish) {
+                    var _transpose = Number(i)
+                    let steppedIteration =  1 + _transpose
+                    // console.log(`This is the normal iteration ${sideDish[i]}`);
+                    // console.log(`This is the stepped iteration debug: ${steppedIteration}`);
+                    let addon = `Option ${steppedIteration}: <span class= 'popout-options'>${sideDish[i]}</span>. `;
+                    configure = configure + addon;
+                    // console.log(configure);
+                }
+
+            } else {
+                configure = 'No sides Chosen';
+            };
+
+            // console.log(endResultOrderList.length)
+            return `<div class= 'popout-details-top popout-common'>Main Dish: <span class = 'popout-options'>${mainDish}</span></div>
+            <div class= 'popout-details-bottom popout-common'>${configure}</div>`;
+        }
+        document.getElementById('popout-details-input').innerHTML = format();
+        document.getElementById('total-value-copied').innerHTML = `Total: $${totalValue}`;  
+    }
+
+    confirmationWindowStepTwo = () => {
+        var almostFinalWindow = document.getElementById('order-wrapper');
+        almostFinalWindow.style.display = 'none';
+        var almostFinalWindow = document.getElementById('final-window');
+        almostFinalWindow.style.display = 'block';
+    }
+
+    popoutWindowClose = () => {
+        var popout = document.getElementsByClassName('confirm-popout-window-wrapper')[0];
+        popout.style.display = 'none';
+        var almostFinalWindow = document.getElementById('order-wrapper');
+        almostFinalWindow.style.display = 'block';
+        var almostFinalWindow = document.getElementById('final-window');
+        almostFinalWindow.style.display = 'none';
+    }
+
+
 </script>
 
 <!-- script for the total counter and animations -->
