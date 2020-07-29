@@ -128,7 +128,8 @@
 
     <!-- init totalValue -->
     <script>
-        totalValue = 0
+        var totalValue = 0;
+        var endResultOrderList = [];
     </script>
 </head>
 
@@ -185,24 +186,24 @@
                         <h3>Here are the available reductions</h3>
                     </div>
                     <div class="additives-wrapper mod-wrapper">
-                        <button class="additive menu-option" id= 'steak-button1' onclick="selectedItem('steak-button1', 3)">
+                        <button class="additive menu-option" id= 'steak-button1' onclick="selectedItem('steak-button1', 3, `${Steak.additives.first.name}`)">
                             <p id='steak-additive-price1'></p>
                         </button>
-                        <button class="additive menu-option" id= 'steak-button2' onclick="selectedItem('steak-button2', 2)">
+                        <button class="additive menu-option" id= 'steak-button2' onclick="selectedItem('steak-button2', 2, `${Steak.additives.second.name}`)">
                             <p id= 'steak-additive-price2'></p>
                         </button>
-                        <button class="additive menu-option" id= 'steak-button3' onclick="selectedItem('steak-button3', 20)">
+                        <button class="additive menu-option" id= 'steak-button3' onclick="selectedItem('steak-button3', 20, `${Steak.additives.third.name}`)">
                             <p id= 'steak-additive-price3'></p>
                         </button>
                     </div>
                     <div class="subtractor-wrapper mod-wrapper">
-                        <button class="additive menu-option" id= 'steak-button4' onclick="selectedItem('steak-button4', -5)">
+                        <button class="additive menu-option" id= 'steak-button4' onclick="selectedItem('steak-button4', -5, `${Steak.subtractions.first.name}`)">
                             <p id='steak-subtract-price1'></p>
                         </button>
-                        <button class="additive menu-option" id= 'steak-button5' onclick="selectedItem('steak-button5', -25)">
+                        <button class="additive menu-option" id= 'steak-button5' onclick="selectedItem('steak-button5', -25, `${Steak.subtractions.second.name}`)">
                             <p id='steak-subtract-price2'></p>
                         </button>
-                        <button class="additive menu-option" id= 'steak-button6' onclick="selectedItem('steak-button6', -5)">
+                        <button class="additive menu-option" id= 'steak-button6' onclick="selectedItem('steak-button6', -5, `${Steak.subtractions.third.name}`)">
                             <p id='steak-subtract-price3'></p>
                         </button>
                     </div>
@@ -218,24 +219,24 @@
                         <h3>Here are the available reductions</h3>
                     </div>
                     <div class="additives-wrapper mod-wrapper">
-                        <button class="additive menu-option" id= 'salmon-button1' onclick="selectedItem('salmon-button1', 4)">
+                        <button class="additive menu-option" id= 'salmon-button1' onclick="selectedItem('salmon-button1', 4, `${Salmon.additives.first.name}`)">
                             <p id='salmon-additive-price1'></p>
                         </button>
-                        <button class="additive menu-option" id= 'salmon-button2' onclick="selectedItem('salmon-button2', 5)">
+                        <button class="additive menu-option" id= 'salmon-button2' onclick="selectedItem('salmon-button2', 5, `${Salmon.additives.second.name}`)">
                             <p id= 'salmon-additive-price2'></p>
                         </button>
-                        <button class="additive menu-option" id= 'salmon-button3' onclick="selectedItem('salmon-button3', 10)">
+                        <button class="additive menu-option" id= 'salmon-button3' onclick="selectedItem('salmon-button3', 10, `${Salmon.additives.third.name}`)">
                             <p id= 'salmon-additive-price3'></p>
                         </button>
                     </div>
                     <div class="subtractor-wrapper mod-wrapper">
-                        <button class="additive menu-option" id= 'salmon-button4' onclick="selectedItem('salmon-button4', -5)">
+                        <button class="additive menu-option" id= 'salmon-button4' onclick="selectedItem('salmon-button4', -5, `${Salmon.subtractions.first.name}`)">
                             <p id='salmon-subtract-price1'></p>
                         </button>
-                        <button class="additive menu-option" id= 'salmon-button5' onclick="selectedItem('salmon-button5', -5)">
+                        <button class="additive menu-option" id= 'salmon-button5' onclick="selectedItem('salmon-button5', -5, `${Salmon.subtractions.second.name}`)">
                             <p id='salmon-subtract-price2'></p>
                         </button>
-                        <button class="additive menu-option" id= 'salmon-button6' onclick="selectedItem('salmon-button6', -10)">
+                        <button class="additive menu-option" id= 'salmon-button6' onclick="selectedItem('salmon-button6', -10, `${Salmon.subtractions.third.name}`)">
                             <p id='salmon-subtract-price3'></p>
                         </button>
                     </div>
@@ -251,24 +252,24 @@
                         <h3>Here are the available reductions</h3>
                     </div>
                     <div class="additives-wrapper mod-wrapper">
-                        <button class="additive menu-option" id= 'burger-button1' onclick="selectedItem('burger-button1', 2)">
+                        <button class="additive menu-option" id= 'burger-button1' onclick="selectedItem('burger-button1', 2, `${Burger.additives.first.name}`)">
                             <p id='burger-additive-price1'></p>
                         </button>
-                        <button class="additive menu-option" id= 'burger-button2' onclick="selectedItem('burger-button2', 40)">
+                        <button class="additive menu-option" id= 'burger-button2' onclick="selectedItem('burger-button2', 40, `${Burger.additives.second.name}`)">
                             <p id= 'burger-additive-price2'></p>
                         </button>
-                        <button class="additive menu-option" id= 'burger-button3' onclick="selectedItem('burger-button3', 4)">
+                        <button class="additive menu-option" id= 'burger-button3' onclick="selectedItem('burger-button3', 4, `${Burger.additives.third.name}`)">
                             <p id= 'burger-additive-price3'></p>
                         </button>
                     </div>
                     <div class="subtractor-wrapper mod-wrapper">
-                        <button class="additive menu-option" id= 'burger-button4' onclick="selectedItem('burger-button4', -5)">
+                        <button class="additive menu-option" id= 'burger-button4' onclick="selectedItem('burger-button4', -5, `${Burger.subtractions.first.name}`)">
                             <p id='burger-subtract-price1'></p>
                         </button>
-                        <button class="additive menu-option" id= 'burger-button5' onclick="selectedItem('burger-button5', -2)">
+                        <button class="additive menu-option" id= 'burger-button5' onclick="selectedItem('burger-button5', -2, `${Burger.subtractions.second.name}`)">
                             <p id='burger-subtract-price2'></p>
                         </button>
-                        <button class="additive menu-option" id= 'burger-button6' onclick="selectedItem('burger-button6', -10)">
+                        <button class="additive menu-option" id= 'burger-button6' onclick="selectedItem('burger-button6', -10, `${Burger.subtractions.third.name}`)">
                             <p id='burger-subtract-price3'></p>
                         </button>
                     </div>
@@ -311,6 +312,7 @@
         document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
         var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
         orderButton.style.display = 'flex';
+        endResultOrderList.push(Steak.name);
     }
     menuStart2 = () => {
         var menu = document.getElementById("options");
@@ -328,6 +330,7 @@
         totalValue = 25;
         document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
         orderButton.style.display = 'flex';
+        endResultOrderList.push(Salmon.name);
     }
     menuStart3 = () => {
         var menu = document.getElementById("options");
@@ -345,6 +348,7 @@
         totalValue = 30;
         document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
         orderButton.style.display = 'flex';
+        endResultOrderList.push(Burger.name);
     }
 
     menuReset = () => {
@@ -379,6 +383,9 @@
         totalValue = 0
         document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
         orderButton.style.display = 'none';
+        // console.log(`This should have something: ${endResultOrderList}`); 
+        endResultOrderList = [];
+        // console.log(`This should be empty: ${endResultOrderList}`);
 
         
     }
@@ -388,17 +395,22 @@
 <script>
     document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
 
-    selectedItem = (id, price) => {
+    selectedItem = (id, price, name) => {
         item = document.getElementById(id);
         item.style.transition = '0.04';
         if (item.style.border == 'solid green') {
             item.style.border = 'none';
             totalValue = totalValue - price;
             document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+            _removal = endResultOrderList.indexOf(name);
+            endResultOrderList.splice(_removal, _removal);
+            // console.log(`Removal Step: ${endResultOrderList}`);
         } else {
             item.style.border = 'solid green';
             totalValue = totalValue + price;
             document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+            endResultOrderList.push(name)
+            // console.log(`Additional Step: ${endResultOrderList}`);
         };
 
     };
