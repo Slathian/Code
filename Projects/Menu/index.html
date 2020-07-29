@@ -286,6 +286,11 @@
     <div class="total-counter" id= 'total'>
         <p id= 'total-value'></p>
     </div>
+    <div class="order-button-wrapper">
+        <button id= 'order-button'>
+            Place Order!
+        </button>
+    </div>
 </body>
 <!-- script for all of the transition calls -->
 <script>
@@ -304,7 +309,8 @@
         title.style.marginTop = '155px';
         totalValue = 55;
         document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
-        
+        var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
+        orderButton.style.display = 'flex';
     }
     menuStart2 = () => {
         var menu = document.getElementById("options");
@@ -320,7 +326,8 @@
         var title = document.getElementById('total');
         title.style.marginTop = '155px';
         totalValue = 25;
-        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
+        orderButton.style.display = 'flex';
     }
     menuStart3 = () => {
         var menu = document.getElementById("options");
@@ -336,7 +343,8 @@
         var title = document.getElementById('total');
         title.style.marginTop = '155px';
         totalValue = 30;
-        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
+        orderButton.style.display = 'flex';
     }
 
     menuReset = () => {
@@ -369,7 +377,8 @@
             augment.style.border = 'none';
         }
         totalValue = 0
-        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;
+        document.getElementById('total-value').innerHTML = `Total: $${totalValue}`;var orderButton = document.getElementsByClassName('order-button-wrapper')[0];
+        orderButton.style.display = 'none';
 
         
     }

@@ -149,4 +149,31 @@ button:hover {
     justify-content: left;
     margin-top: 200px;
     margin-left: 12px;
+    font-size: 2em;
+}
+
+/* order button wrapper */
+.order-button-wrapper {
+    display: none;
+    justify-content: left;
+}
+
+#order-button {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: white;
+    background-color: #298489;
+    border: #1A4345 solid;
+    border-radius: 1000px;
+    width: 200px;
+    height: 50px;
+    margin-left: 12px;
+    outline: none;
+}
+
+#order-button:hover {
+    transition: .3s;
+    background-color: rgb(19, 51, 53);
 }
