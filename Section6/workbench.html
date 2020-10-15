@@ -2,22 +2,16 @@
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
-    <title></title>
+    <title>Workbench</title>
 </head>
 <body>
-    <div class="post-wrapper">
-        <div class="post"></div>
-        <div class="post"></div>
-        <div class="post"></div>
-    </div>
+    <div id="wrapper"></div>
 </body>
 
 <script>
-    const messages = document.querySelectorAll('.post')
-    messages.forEach(el => {
-        el.classList.remove('post')
-        el.innerHTML = "<p class= 'flash-message'>Posts coming soon!</p>"
-        console.log('this is working');
-    });
+    const insert = document.createElement('span')
+    insert.innerHTML = "You got this!"
+    insert.classList.add('content');
+    document.getElementById('wrapper').appendChild(insert)
 </script>
 </html>
