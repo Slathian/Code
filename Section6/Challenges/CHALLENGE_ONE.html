@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Challenge Page</title>
+
+    <style>
+        /* common */
+        body {
+            margin: 0px;
+            background-color: white;
+        }
+
+        /* title stuff */
+        .title-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .title {
+            font-size: 2em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* separator--- self explanatory */
+
+        #separator {
+            height: 5px;
+            color: black;
+            background-color: grey;
+            width: 95%;
+            border: none;
+            box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.25);
+        }
+
+        /* i should move this common task but... */
+
+        .alignment-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* example page for stuff */
+
+        .top {
+            height: 600px;
+            margin-top: 50px;
+            
+        }
+
+        .workspace-wrapper {
+            display: flex;
+            flex-direction: column;
+            outline: 2px solid black;
+            width: 70%;
+            box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.75);
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            font-size: 1.5em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* This is for the control panel */
+
+        .middle {
+            margin-top: 50px;
+            height: 400px;
+            margin-top: 50px;
+        }
+
+        .control-panel-wrapper {
+            display: grid;
+            grid-template-rows: repeat(1fr);
+            height: 25%;
+            flex-direction: column;
+            width: 70%;
+        }
+
+        .btn-wrapper-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 100px;
+            
+        }
+
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        /* styles for the popup input feature */
+
+        .hidden {
+            display: none;
+        }
+
+        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 70%;
+            background-color: white;
+            position: absolute;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.5em;
+        }
+        .user-input-wrapper {
+            margin-top: 50px;
+        }
+
+        #user-input-bar {
+            height: 50px;
+            width: 550px;
+            font-size: 1.1em;
+        }
+
+        #submit-button {
+            height: 56px;
+            width: 200px;
+            margin-top: 50px;
+            margin-left: 15px;
+        }
+
+        .input-section {
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="title-wrapper">
+        <div class="title">
+            Challenge One - Using document.querySelector
+        </div>
+    </div>
+
+    <hr id="separator">
+
+    <div class="alignment-center top">
+        <div class="input-wrapper">
+            <div class="content-section">
+                <div class="info">
+                    Type in what you want to input!
+                </div>
+                <div class="input-section">
+                    <div class="user-input-wrapper">
+                        <input type="text" id="user-input-bar">
+                    </div>
+                        <button id="submit-button" onclick="addDiv(), toggleOverlay()">Submit</button>
+                    </div>
+                </div>
+
+        </div>
+        <div class="workspace-wrapper">
+            <div class="explaination section">
+                Items that are added to the page or manipulated will go below:
+            </div>
+            <div class="added-examples-wrapper">
+                <!-- <div class="added-example section">example 1</div>
+                <div class="added-example section">example 2</div>
+                <div class="added-example section">example 3</div>
+                <div class="added-example section">example 4</div>
+                <div class="added-example section">example 5</div>
+                <div class="added-example section">example 6</div>
+                <div class="added-example section">example 7</div>
+                <div class="added-example section">example 8</div>
+                <div class="added-example section">example 9</div> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="alignment-center middle">
+        <div class="control-panel-wrapper">
+            <div class="btn-wrapper-row">
+                <button onclick="toggleOverlay()" id="special-one">Add Input</button>
+                <button onclick="removeDiv()">Remove Input</button>
+                <button onclick="fontUp()">Increase Font Size</button>
+                <button onclick="fontDown()">Decrease Font Size</button>
+            </div>
+            <div class="btn-wrapper-row">
+                <button style="background-color: Green;  color: azure;" onclick="colorChange('Green')">Green</button>
+                <button style="background-color: blue; color: azure;" onclick="colorChange('Blue')">Blue</button>
+                <button style="background-color: purple;  color: azure;" onclick="colorChange('Purple')">Purple</button>
+                <button style="background-color: red; color: azure;" onclick="colorChange('Red')">Red</button>
+            </div>
+            <div class="btn-wrapper-row">
+                <button onclick="moveLeft()">Move to the Left</button>
+                <button onclick="moveRight()">Move to the Right</button>
+                <button onclick="fontChange()">Change Font</button>
+                <button id="boldBtn">Embolden</button>
+            </div>
+            <div class="btn-wrapper-row">
+                <button onclick="nextExample()">NEXT</button>
+                <button onclick="backExample()">BACK</button>
+                <button onclick="projCopy()">COPY TEXT</button>
+                <button onclick="projPaste()">PASTE</button>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+</body>
+
+<script>
+    const maxLines = 14;
+    let initSelector = 0
+    let mainBody = document.querySelectorAll('.added-example')
+    
+
+    // Selection Process ---------------------------------------------------------------------------------------------------------------------
+    function selector(i) {
+        mainBody = document.querySelectorAll('.added-example')
+        if (mainBody.length > 0) {
+            // console.log(i);
+            let currentSelector = mainBody[i];
+            return currentSelector;
+            // console.log(currentSelector);
+            // console.log('Selector finished Running');
+            
+        }else {
+            console.log('No examples to highlight');
+            let currentSelector = '';
+            return currentSelector;
+        }
+    };
+    // INIT ----------------------------------------------------
+    selector(initSelector);
+    // !~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~
+
+    function verify() {
+        console.log(initSelector);
+        current = selector(initSelector)
+        current.style.backgroundColor = 'rgba(255, 165,0,0.3)';
+        // console.log('verify finished running');
+    }
+    if (mainBody.length > 0) {
+        verify();
+    }
+    
+    
+
+    // MOVE HIGHLIGHT SECTION ----------------------------------------------------------------------------------------------------------------------
+    const nextExample = () => {
+        current.style.backgroundColor = 'rgba(0,0,0,0)';
+        initSelector += 1
+        
+        
+        if (initSelector > (mainBody.length - 1)) {
+            initSelector = 0;
+        }
+        selector(initSelector)
+        // console.log('phase 2 done');
+        
+        verify();
+        // console.log(`Process has finished: result: ${initSelector}`);
+        
+    }
+
+    const backExample = () => {
+        current.style.backgroundColor = 'rgba(0,0,0,0)';
+        initSelector -= 1
+        
+        if (initSelector < 0) {
+            initSelector = mainBody.length - 1
+        }
+        
+        selector(initSelector)
+        // console.log('phase 2 done');
+        
+        verify();
+        // console.log(`Process has finished: result: ${initSelector}`);
+        
+    }
+
+    // simple color change function -------------------------------------------------------------------------------------------------------------------------------
+
+    function colorChange(hexdex) {
+        mainBody[initSelector].style.color = hexdex;
+    };
+
+    //Change font -------------------------------------------------------------------------------------------------------------------------------
+    function fontChange() {
+        if (mainBody[initSelector].style.fontFamily === "") {
+            mainBody[initSelector].style.fontFamily = "Arial, Helvetica, sans-serif" 
+        }
+        
+        if (mainBody[initSelector].style.fontFamily === '"Times New Roman", Times, serif') {
+            mainBody[initSelector].style.fontFamily = "Arial, Helvetica, sans-serif"
+        } else if (mainBody[initSelector].style.fontFamily === "Arial, Helvetica, sans-serif") {
+            mainBody[initSelector].style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
+        } else if (mainBody[initSelector].style.fontFamily === "Verdana, Geneva, Tahoma, sans-serif") {
+            mainBody[initSelector].style.fontFamily = "'Times New Roman', Times, serif";
+        }
+    }
+
+    //Embolden -------------------------------------------------------------------------------------------------------------------------------
+
+    const boldBtn = document.querySelector('#boldBtn');
+    
+    boldBtn.addEventListener('click', e => {
+        mainBody[initSelector].classList.toggle('bold');
+    })
+
+
+    // COPY PASTE SECTION !~!~!~!~!~!~!~!~!~!~!~!~!~!~ NOT DONE YET !~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~ -------------------------------------------------------------------------------------------------------------------------------
+    var copy = ""
+    function projCopy() {
+        copy = mainBody[initSelector].innerHTML;
+        // console.log(`we have copied ${copy}`);
+    }
+
+    function projPaste() {
+        // console.log(`we actually have ${copy}`);
+        const wrapperLocation = document.querySelector('.added-examples-wrapper');
+        // console.log(wrapperLocation);
+        
+        let currentPasteLocation = mainBody[initSelector]
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('added-example');
+        newDiv.classList.add('section');
+        const copiedContent = document.createTextNode(copy);
+        newDiv.appendChild(copiedContent);
+
+
+        wrapperLocation.insertBefore(newDiv, currentPasteLocation);
+
+    }
+    
+    // Input interface toggles and whatnot -------------------------------------------------------------------------------------------------------------------------------
+
+    const inputSection = document.querySelector('.input-wrapper');
+    inputSection.style.display = "none"
+    function toggleOverlay() {
+        disableAllButtons()
+        if (inputSection.style.display === "none") {
+            inputSection.style.display = "flex";
+        }else if (inputSection.style.display === "flex") {
+        inputSection.style.display = "none";
+        enableAllButtons()
+        }
+    }
+
+    function addDiv() {
+        if (mainBody.length === 14) {
+            document.querySelector('#user-input-bar').value = "";
+            window.alert('You have too many text lines for this simulation. Please remove one before you add another line')
+            return false;
+        }
+        const wrapperLocation = document.querySelector('.added-examples-wrapper');
+        // console.log(wrapperLocation);
+        let currentPasteLocation = mainBody[initSelector]
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('added-example');
+        newDiv.classList.add('section');
+        let userInput = document.querySelector('#user-input-bar').value;
+        const textNode = document.createTextNode(userInput)
+        if (textNode.length < 1) {
+            return false;
+        } else {
+            newDiv.appendChild(textNode);
+            wrapperLocation.insertBefore(newDiv, currentPasteLocation);
+            document.querySelector('#user-input-bar').value = "";
+            if (typeof(current) != "undefined") {
+                current.style.backgroundColor = 'rgba(0,0,0,0)';
+            }
+            initSelector = 0
+            selector(initSelector)
+            verify();
+        }
+    }
+
+    // Button Disabler had to make a shitty loops since I could not make a for loop work for whatever reason.... ----------------------------------------------------------------------------------------------------------------------
+
+    function disableAllButtons() {
+        const btnSet = document.querySelectorAll('button');
+        // console.log(btnSet[1]);
+        const btnCount = btnSet.length;
+        for (x = 0; x < btnCount; x++) {
+            btnSet[x].disabled = true;
+            // console.log('iteration done');
+        }
+        document.querySelector('#special-one').disabled = false;
+        document.querySelector('#submit-button').disabled = false;
+        
+    }
+
+    function enableAllButtons() {
+        const btnSet = document.querySelectorAll('button');
+        // console.log(btnSet[1]);
+        const btnCount = btnSet.length;
+        for (x = 0; x < btnCount; x++) {
+            btnSet[x].disabled = false;
+            // console.log('iteration done');
+        }
+        
+    }
+
+
+
+
+    // Font size increase and decrease -------------------------------------------------------------------------------------------------------------------------------
+    function fontUp() {
+        if (mainBody[initSelector].style.fontSize == "") {
+            // console.log('Init done');
+            mainBody[initSelector].style.fontSize = "1.5em"
+        } else {
+            // console.log('rest of the code I guess can go here?');
+            let preStrip = mainBody[initSelector].style.fontSize
+            if (preStrip.length <= 3) {
+                // console.log('we need a special cause here');
+                var strip = preStrip.slice(0, 1);
+                // console.log(strip);
+                var converted = Number(strip)
+                
+            } else {
+                // console.log('this is for when the number is like 1.5em');
+                var strip = preStrip.slice(0, 3);
+                // console.log(strip);
+                var converted = Number(strip)
+            }
+            // console.log(converted);
+            converted += 0.1
+            // console.log(converted);
+            mainBody[initSelector].style.fontSize = `${converted}em`;
+        };
+    }
+
+    function fontDown() {
+        if (mainBody[initSelector].style.fontSize == "") {
+            // console.log('Init done');
+            mainBody[initSelector].style.fontSize = "1.5em"
+        } else {
+            // console.log('rest of the code I guess can go here?');
+            let preStrip = mainBody[initSelector].style.fontSize
+            if (preStrip.length <= 3) {
+                // console.log('we need a special cause here');
+                var strip = preStrip.slice(0, 1);
+                // console.log(strip);
+                var converted = Number(strip)
+                
+            } else {
+                // console.log('this is for when the number is like 1.5em');
+                var strip = preStrip.slice(0, 3);
+                // console.log(strip);
+                var converted = Number(strip)
+            };
+            // console.log(converted);
+            converted -= 0.1
+            // console.log(converted);
+            mainBody[initSelector].style.fontSize = `${converted}em`;
+        }
+    }
+
+    // Remove a Div ---------------------------------------------------------------------------------------------------------------------------
+
+    function removeDiv() {
+        mainBody[initSelector].remove();
+        if (initSelector = mainBody.length - 1) {
+            initSelector -= 1;
+        } 
+        
+        if (initSelector = 0) {
+            initSelector += 1;
+        }
+        console.log(`This is the init selector after move process ${initSelector}`);
+        
+        selector(initSelector); 
+
+        if (mainBody[0] != undefined) {
+            verify();
+        } else {
+            console.log('this should ONLY RUN if we are out of selections');
+        }
+        
+    }
+
+    // Move Left and Right --------------------------------------------------------------------------------------------------------------------------------
+
+    function moveRight() {
+        if (mainBody[initSelector].style.justifyContent === "") {
+            mainBody[initSelector].style.justifyContent = "center";
+        }
+
+        if (mainBody[initSelector].style.justifyContent === "center") {
+            mainBody[initSelector].style.justifyContent ="flex-end";
+        } else if (mainBody[initSelector].style.justifyContent === "flex-end") {
+            mainBody[initSelector].style.justifyContent = "flex-start";
+        } else if (mainBody[initSelector].style.justifyContent === "flex-start") {
+            mainBody[initSelector].style.justifyContent = "center";
+        }
+        
+    }
+
+    function moveLeft() {
+        if (mainBody[initSelector].style.justifyContent === "") {
+            mainBody[initSelector].style.justifyContent = "center";
+        }
+
+        if (mainBody[initSelector].style.justifyContent === "center") {
+            mainBody[initSelector].style.justifyContent ="flex-start";
+        } else if (mainBody[initSelector].style.justifyContent === "flex-start") {
+            mainBody[initSelector].style.justifyContent = "flex-end";
+        } else if (mainBody[initSelector].style.justifyContent === "flex-end") {
+            mainBody[initSelector].style.justifyContent = "center";
+        }
+        
+    }
+</script>
+</html>

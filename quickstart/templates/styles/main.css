@@ -1,0 +1,14 @@
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background-color: red;
+}
+
+.form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}

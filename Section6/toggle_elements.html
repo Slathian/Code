@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggleBtn">Toggle Me</button>
+
+    <div class="hidden" id="mainHeading">
+        Hi there
+    </div>
+</body>
+
+<script>
+    const heading = document.getElementById('mainHeading');
+    const btn = document.getElementById('toggleBtn');
+
+    btn.addEventListener('click', (e) => {
+        heading.classList.toggle('hidden');
+    });
+</script>
+</html>
+
+<!-- Toggle is really nice because it makes it a lot simplier to use than duplicating the code. Toggle removes a SPECIFIC CLASS!! Which is really nice. Automates the behavior -->

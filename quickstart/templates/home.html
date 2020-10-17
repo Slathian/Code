@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Initiation</title>
+
+  <link rel="stylesheet" href="styles/main.css">
+  
+</head>
+<body>
+  <div class="title-wrapper">
+    <div class="title">
+    Please input the URL needed for overlay
+    </div>
+  </div>
+  
+  <div class="form-wrapper">
+    <form class="" action="{{url_for('collection')}}" method="POST">
+      <input type="text" name="message" placeholder="Enter a message">
+      <button type="submit">
+        Send
+      </button>
+  </form>
+  </div>
+</body>
+</html>
