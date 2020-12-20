@@ -107,5 +107,4 @@ def initiateAssistant(audio):
 response('Avatar is Online')
 while True:
     initiator()
-
 # -----
