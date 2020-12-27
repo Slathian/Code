@@ -74,6 +74,11 @@ def initiateAssistant(audio):
         print(audio)
         response('are you sure you wish to shutdown?')
         y_n()
+        
+    elif 'turn' in audio and 'off' in audio:
+        print(audio)
+        response('are you sure you wish to shutdown?')
+        y_n()
 
     elif 'nevermind' in audio or 'never mind' in audio:
         pass
