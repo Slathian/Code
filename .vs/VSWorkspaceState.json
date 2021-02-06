@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Fortnite_API",
+    "\\Fortnite_API\\src",
+    "\\Fortnite_API\\src\\components",
+    "\\React_Class_Dump",
+    "\\React_Class_Dump\\FirstTestingReact"
   ],
-  "SelectedNode": "\\VisualStudiosFolder",
+  "SelectedNode": "\\Fortnite_API\\src\\components\\fortniteData.js",
   "PreviewInSolutionExplorer": false
 }
