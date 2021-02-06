@@ -1,0 +1,9 @@
+{
+  "name": "fortnite_api",
+  "version": "0.0.0",
+  "description": "Fortnite_API",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
