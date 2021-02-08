@@ -32,7 +32,10 @@ async function scrapeWeb(url, xpath_Name, xpath_Points ) {
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-    //pull kills and set it to a variable
+    //Try out Axious <------------
+
+
+    //pull points and sets it to a variable
     const [el_Points] = await page.$x(`${xpath_Points}`);
     const _pointsTxt = await el_Points.getProperty('textContent');
     const pointsTxt = await _pointsTxt.jsonValue();
@@ -60,7 +63,7 @@ async function scrapeWeb(url, xpath_Name, xpath_Points ) {
 }
 
 // scrapeWeb('https://fortnitetracker.com/events/epicgames_S15_SoloCashCup_BR','//*[@id="row0"]/td[2]/div/div[2]/div[1]','//*[@id="row0"]/td[3]' );
-scrapeWeb('https://fortnitetracker.com/events/epicgames_S15_SoloCashCup_BR','//*[@id="row0"]/td[2]/div/div[2]/div[1]','//*[@id="row0"]/td[3]' );
+// scrapeWeb('https://fortnitetracker.com/events/epicgames_S15_SoloCashCup_BR','//*[@id="row0"]/td[2]/div/div[2]/div[1]','//*[@id="row0"]/td[3]' );
 
 //*[@id="row0"]/td[2]/div
 //*[@id="row86"]/td[2]/div/div[2]/div
@@ -78,4 +81,4 @@ async function Compile100List (url) {
     }
 }
 
-// Compile100List('https://fortnitetracker.com/events/epicgames_S15_SoloCashCup_BR')
+Compile100List('https://fortnitetracker.com/events/epicgames_S15_SoloCashCup_BR')
