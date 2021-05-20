@@ -2,26 +2,46 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import BlogItem from "../blog/blog-item";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 class Blog extends Component {
   constructor() {
     super();
 
     this.state = {
-      blogItems: []
+      blogItems: [],
+      totalCount: 0,
+      currentPage: 0,
+      isloading: true
     };
 
     this.getBlogItems = this.getBlogItems.bind(this);
+    this.activateInfiniteScroll();
+  }
+
+  activateInfiniteScroll() {
+    window.onscroll = () => {
+
+      if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+        console.log("Load more posts...")
+      }
+    }
   }
 
   getBlogItems() {
+    this.setState({
+      currentPage: this.state.currentPage + 1
+    });
+
     axios
-      .get("https://jordan.devcamp.space/portfolio/portfolio_blogs", {
+      .get("https://joshuaangelo.devcamp.space/portfolio/portfolio_blogs", {
         withCredentials: true
       })
       .then(response => {
         this.setState({
-          blogItems: response.data.portfolio_blogs
+          blogItems: response.data.portfolio_blogs,
+          totalCount: response.data.meta.total_records,
+          isloading: false
         });
       })
       .catch(error => {
@@ -40,6 +60,9 @@ class Blog extends Component {
 
     return (
       <div className="blog-container">
+        <div>
+          <FontAwesomeIcon icon="spinner" spin/>
+        </div>
         <div className="content-container">{blogRecords}</div>
       </div>
     );
